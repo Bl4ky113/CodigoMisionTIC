@@ -42,7 +42,7 @@ switch (true) {
 
   break;
   default:
-    document.write("Vuelva a intentar, profavor");
+    document.write("Vuelva a intentar, porfavor");
 
   break;
 }
