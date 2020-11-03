@@ -1,6 +1,6 @@
 //Made By Bl4ky113
 
-//Variables
+//Variable
 
 var num1, num2, num3, numMin;
 
@@ -9,6 +9,8 @@ num1 = parseInt(prompt("Ingrese un Número"));
 num2 = parseInt(prompt("Ingrese otro Número"));
 
 num3 = parseInt(prompt("Ingrese el ultimo Número"));
+
+//Function
 
 switch (true) {
   case (num1 > num2 && num2 > num3):
