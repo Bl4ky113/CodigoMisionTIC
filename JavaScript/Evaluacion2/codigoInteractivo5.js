@@ -49,4 +49,5 @@ switch (true){
     document.write("EL código del producto no esta registrado en el programa\nVuelva a intentar")
 
   break;
+
 }
