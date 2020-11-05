@@ -56,7 +56,9 @@ function rollDaDice() {
   };
   diceClear();
 
-  console.log(diceValue);
+//Dice canvas function
+
+  //Dice_1 canvas
 
   switch (diceValue["value_1"]) {
     case 1: //Dice_1's face 1
@@ -103,6 +105,8 @@ function rollDaDice() {
     break;
   }
 
+  //Dice_2 canvas
+
   switch (diceValue["value_2"]) {
     case 1: //Dice_2's face 1
       drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 100, 100);
@@ -146,6 +150,56 @@ function rollDaDice() {
     default:
       alert("HOW?!");
     break;
+
+  }
+
+//Main Functions
+
+  var totalScore = diceValue["value_1"] + diceValue["value_2"];
+  var gameWin;
+
+  var text = {
+    win_Or_lose: document.getElementById("win_lose"),
+    pair_Or_odd: document.getElementById("pair_odd"),
+    score: document.getElementById("score_class"),
+
+  }
+
+  //Win or Lose Function
+
+  if (totalScore >= 6) {
+    text["win_Or_lose"].innerHTML = "Congratulations!! You Win The Dice Throwing Simulator";
+    gameWin = true;
+
+  } else {
+    text["win_Or_lose"].innerHTML = "You Lose...  C'mon try again.";
+    gameWin = false;
+
+  }
+
+  //Pair or Odd Function
+
+  if (diceValue["value_1"] == diceValue["value_2"] && gameWin == false) {
+    text["pair_Or_odd"].innerHTML = "Your dices are pair, well that's Unfair";
+
+  } else if (diceValue["value_1"] == diceValue["value_2"] && gameWin == true) {
+    text["pair_Or_odd"].innerHTML = "Your dices are pair, well that's pretty Fine";
+
+  } else {
+    text["pair_Or_odd"].innerHTML = "Your dices are odd";
+
+  }
+
+  //Score classification
+
+  if (diceValue["value_1"] <= 2 || diceValue["value_2"] <= 2){
+    text["score"].innerHTML = "Your <strong>score</strong> is kinda low";
+
+  } else if (diceValue["value_1"] >= 5 || diceValue["value_2"] >= 5) {
+    text["score"].innerHTML = "Your <strong>score</strong> is pretty high";
+
+  } else {
+    text["score"].innerHTML = "Your <strong>score</strong> is the average";
 
   }
 
