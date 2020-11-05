@@ -6,24 +6,27 @@
     <link rel="stylesheet" href="styleLanzamientoDados.css" />
   </head>
   <body>
-    <div>
-      <h1>Wellcome!!!</h1>
+    <div id="Content">
+      <div id="Header">
+        <h1>Wellcome!!!</h1>
+      </div>
+      <div id="Intro">
+        <p>This is a Rolling Dice Simulator. <br />You can play the dice, and you could win for <strong>FREE!!</strong> </p>
+        <p>Press the button to roll the dice. </p>
+      </div>
+      <div id="buttonDiv">
+        <input type="button" value="Roll Da' Dice!" id="button" />
+      </div>
+      <div id="canvasDiv">
+        <canvas height="200" width="200" id="canvasDice_1"></canvas>
+        <canvas height="200" width="200" id="canvasDice_2"></canvas>
+      </div>
     </div>
-    <div>
-      <p>This is a Rolling Dice Simulator. <br />You can play the dice, and you could win for <strong>FREE!!</strong> </p>
-      <p>Press the button to roll the dice. </p>
-    </div>
-    <div>
-      <input type="button" value="Roll Da' Dice!" id="button" />
-    </div>
-    <div>
-      <canvas height="200" width="200" id="canvasDice_1"></canvas>
-      <canvas height="200" width="200" id="canvasDice_2"></canvas>
-    </div>
-    <div>
-      <h2 id="win_lose"></h2>
-      <p id="pair_odd"></p>
-      <p id="score_class"></p>
+    <div id="DivissionOfTheDivs"></div>  
+    <div id="resultsDiv">
+        <h2 id="win_lose"></h2>
+        <p id="pair_odd"></p>
+        <p id="score_class"></p>
     </div>
     <script src="scriptLanzamientoDados.js" charset="utf-8"></script>
   </body>

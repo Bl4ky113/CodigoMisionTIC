@@ -5,7 +5,7 @@
 var diceSetUp = [
   "#555", //Border Color
   "2", //Border Width
-  "#ddd", //Background Color
+  "#fff", //Background Color
   "#f00", //Circle Color
   "20", //Circle Width and radius
 
