@@ -50,8 +50,8 @@ diceClear();
 
 function rollDaDice() {
   var diceValue = {
-    value_1: 6,//Math.floor( (Math.random() * 6) + 1 ),
-    value_2: 0,//Math.floor( (Math.random() * 6) + 1 ),
+    value_1: Math.floor( (Math.random() * 6) + 1 ),
+    value_2: Math.floor( (Math.random() * 6) + 1 ),
 
   };
   diceClear();
@@ -104,50 +104,52 @@ function rollDaDice() {
   }
 
   switch (diceValue["value_2"]) {
-    case 1: //Dice_1's face 1
-      drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 100, 100);
+    case 1: //Dice_2's face 1
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 100, 100);
 
     break;
-    case 2: //Dice_1's face 2
-      drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 60, 60);
-      drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 140, 140);
+    case 2: //Dice_2's face 2
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 60, 60);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 140, 140);
 
     break;
-  case 3: //Dice_1's face 3
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 100, 100);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 60, 60);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 140, 140);
+    case 3: //Dice_2's face 3
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 100, 100);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 60, 60);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 140, 140);
 
-  break;
-  case 4: //Dice_1's face 4
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 60, 60);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 140, 140);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 140, 60);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 60, 140);
+    break;
+    case 4: //Dice_2's face 4
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 60, 60);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 140, 140);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 140, 60);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 60, 140);
 
-  break;
-  case 5: //Dice_1's face 5
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 60, 60);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 140, 140);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 140, 60);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 60, 140);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 100, 100);
+    break;
+    case 5: //Dice_2's face 5
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 60, 60);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 140, 140);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 140, 60);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 60, 140);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 100, 100);
 
-  break;
-  case 6: //Dice_1's face 6
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 60, 50);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 140, 50);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 60, 100);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 140, 100);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 60, 150);
-    drawCircle(drawDice_1, diceSetUp[3], diceSetUp[4], 140, 150);
+    break;
+    case 6: //Dice_2's face 6
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 60, 50);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 140, 50);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 60, 100);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 140, 100);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 60, 150);
+      drawCircle(drawDice_2, diceSetUp[3], diceSetUp[4], 140, 150);
 
-  break;
-  default:
-    alert("HOW?!");
-  break;
+    break;
+    default:
+      alert("HOW?!");
+    break;
+
+  }
+
 }
-
 
 //Canvas function
 
