@@ -63,27 +63,66 @@ body {
 
 }
 
-#button:hover{
+#button:hover {
   border: 1px dashed rgba(0, 0, 0);
   background-color: rgba(204, 153, 0);
 
 
 }
 
+/* Canvas */
+
+#canvasDiv {
+  margin: 1px 150px;
+  border: 1px solid rgba(0, 0, 0);
+  background-color: rgba(25, 25, 25);
+  text-align: center;
+
+}
+
 
 /*Divssion of the divissions*/
 
-#DivissionOfTheDivs{
+#DivissionOfTheDivs {
   height: 10px;
 
 }
 
 /* results */
 
-#resultsDiv {
+#resultsBorderDiv {
   width: 80%;
   margin: auto;
   border: 2px dotted #fff;
   padding: 10px;
+  background-color: rgba(204, 153, 0, 0.5);
+
+}
+
+#resultsDiv {
+  margin: 10px 50px;
+  border: 5px dotted rgba(204, 153, 0);
+  padding: 2px 30px;
+  background-color: rgba(250, 250, 250);
+  text-align: center;
+
+}
+
+#win_lose {
+  margin: 5px 0px ;
+  text-decoration: underline rgba(204, 153, 0) dashed;
+  font: bold 20px Georgia-serif;
+
+}
+
+#pair_odd {
+  text-decoration: underline rgba(204, 153, 0) solid;
+  font: bold 15px Georgia-serif;
+
+}
+
+#score_class {
+  text-decoration: underline rgba(204, 153, 0) solid;
+  font: bold 12px Georgia;
 
 }
