@@ -1,14 +1,18 @@
 //Made By Bl4ky113
 
+//Variables
+
 var results;
 var add = 0;
 var evenNum = [];
+
+//Function
 
 for (i = 1;i <= 29; i++) {
   if (i%2 == 0) {
     evenNum.push(i);
     add = add + i;
-    results = {
+    results = { //Results array
       square: i ** 2,
       cube: i ** 3,
       average: add / evenNum.length,

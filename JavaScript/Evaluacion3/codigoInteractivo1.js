@@ -1,6 +1,10 @@
 //Made By Bl4ky113
 
+//Variables
+
 var num = 0;
+
+//Function
 
 for (i = 0; i <= 100; i++) {
   num = num + i;
