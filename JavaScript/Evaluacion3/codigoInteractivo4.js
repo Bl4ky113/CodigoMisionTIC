@@ -39,6 +39,7 @@ if (data["price"] < 100000) {
   sellersCommission(payment);
 
 }
+
 function sellersCommission (payCommission) {
   for (i = 1; i <= data["numSellers"]; i++) {
     document.write("La paga del vendedor número ", i, " es de:  ", payCommission, ". <br />");
