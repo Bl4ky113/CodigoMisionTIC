@@ -2,7 +2,7 @@
 
 //Variables
 
-var infoPlants, totalFamPlants;
+var infoPlants, totalFamPlants, famPlantNum;
 var i = 1;
 
   //InnerHTML Variables
@@ -77,21 +77,27 @@ function compareNumPlants(FamilyNum) {
     divHeightPlants.style.display = "block";
     if (infoPlants[1] > 0) {
       setFamily(0, 1);
-      return 1;
+      famPlantNum = 1;
+
     } else if (infoPlants[2] > 0 && infoPlants[1] == 0) {
       setFamily(1, 1)
-      return 2;
+      famPlantNum = 2;
+
     } else {
       setFamily(2, 1);
-      return 3;
+      famPlantNum = 3;
+
     }
+    console.log("Initial: ",famPlantNum);
 
   } else {
     alert("La cantidad de plantas no es igual a el número de plantas");
 
   }
 
+
 }
+
 
 //Change or Set plant family
 
@@ -105,12 +111,22 @@ function setFamily(fa, pl) {
 //Add plants height function
 
 function submitHeight() {
-  var famPlantNum = compareNumPlants();
+  console.log(famPlantNum);
   if (i < infoPlants[famPlantNum]) {
     i++;
     setFamily((famPlantNum - 1), i);
+    console.log(i);
+
   } else {
-    alert("fin");
+    if (famPlantNum < 3) {
+      famPlantNum++;
+      i = 1;
+      setFamily((famPlantNum - 1), 1);
+
+    } else {
+      alert("fin");
+
+    }
 
   }
 
