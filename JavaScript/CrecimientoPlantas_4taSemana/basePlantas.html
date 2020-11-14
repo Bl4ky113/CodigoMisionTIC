@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Crecimiento De Plantas </title>
+    <link rel="stylesheet" href="stylesPlantas.css" />
+  </head>
+  <body>
+    <header>
+      <h1> Bienvenidos a Esperando Mi Plantita. </h1>
+    </header>
+
+    <div>
+      <p> Ingrese el número de plantas que desea saber su proceso y tiempo de Crecimiento. (maximo 50 plantas) </p>
+      <div>
+        <label for="numPl"> Número De Plantas: </label>
+        <input type="number" id="numPl" min="0" max="50"/>
+      </div>
+    </div>
+
+    <div>
+      <p> Ingrese la cantidad de plantas que pertenecen a cada familia </p>
+      <div>
+        <label for="famCacPl"> Familia de Cactácedas:  </label>
+        <input type="number" id="famCacPl" min="0" max="50" />
+        <label for="famPinPl"> Familia de Pináceas:  </label>
+        <input type="number" id="famPinPl" min="0" max="50" />
+        <label for="famLilPl"> Familia de Liliáceas:  </label>
+        <input type="number" id="famLilPl" min="0" max="50" />
+        <br />
+        <label for="checkBtn" id="checkLabel"> Verifica sí el número de plantas sea igual a el número de plantas en las familias </label>
+        <input type="button" id="checkBtn" value="Verificar" />
+      </div>
+    </div>
+
+    <div id="heightDiv">
+      <p> Ingrese la altura de las plantas al ingresar a el invernadero </p>
+      <div>
+        <label for="heightPl" id="numFam_Pl" /> *Debes primero ingresar el número de plantas por familia </label>
+        <input type="number" id="heightPl" min="0" max="100" />
+        <label for="heightPl" id="maxHeight"> ( Altura Maxima 100 ) </label>
+        <input type="button" id="submitHeightbtn" value="Siguiente Planta" />
+      </div>
+    </div>
+    <script src="scriptPlantas.js" charset="utf-8"></script>
+  </body>
+</html>
