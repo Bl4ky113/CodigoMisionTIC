@@ -3,6 +3,7 @@
 //Variables
 
 var infoPlants, totalFamPlants, famPlantNum;
+var heightCac = [], heightPip = [], heightLil = [];
 var i = 1;
 
   //InnerHTML Variables
@@ -112,10 +113,35 @@ function setFamily(fa, pl) {
 
 function submitHeight() {
   console.log(famPlantNum);
+  switch (famPlantNum) {
+    case 1:
+    heightCac.push(parseInt(heightPlants.value));
+    console.log(heightCac, "cac");
+    heightPlants.value = " ";
+
+    break;
+    case 2:
+    heightPip.push(parseInt(heightPlants.value));
+    console.log(heightPip, "pip");
+    heightPlants.value = " ";
+
+    break;
+    case 3:
+    heightLil.push(parseInt(heightPlants.value));
+    console.log(heightLil, "lil");
+    heightPlants.value = " ";
+
+    break;
+    default:
+    alert("how");
+
+    break;
+
+  }
+
   if (i < infoPlants[famPlantNum]) {
     i++;
     setFamily((famPlantNum - 1), i);
-    console.log(i);
 
   } else {
     if (famPlantNum < 3) {
@@ -131,8 +157,3 @@ function submitHeight() {
   }
 
 }
-  /*for (i = 0;i <= infoPlants[]) {
-    numFamPlant.innerHTML = "Familia: " + familyPlants[family] + "; Número: " + i + "; Altura de la planta en Metros: ";
-    i = i + 1;
-
-  }*/
