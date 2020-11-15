@@ -115,25 +115,44 @@ function submitHeight() {
   console.log(famPlantNum);
   switch (famPlantNum) {
     case 1:
-    heightCac.push(parseInt(heightPlants.value));
-    console.log(heightCac, "cac");
-    heightPlants.value = " ";
+      if (heightPlants.value <= maxHeightPlants[0] && heightPlants.value > 0) {
+        heightCac.push(parseFloat(heightPlants.value));
+        console.log(heightCac, "cac");
+        heightPlants.value = " ";
 
+      } else {
+        alert("La altura de la planta es mayor a su altura maxima. ");
+        heightPlants.value = " ";
+
+      }
     break;
     case 2:
-    heightPip.push(parseInt(heightPlants.value));
-    console.log(heightPip, "pip");
-    heightPlants.value = " ";
+      if (heightPlants.value <= maxHeightPlants[1] && heightPlants.value > 0) {
+        heightPip.push(parseFloat(heightPlants.value));
+        console.log(heightPip, "pip");
+        heightPlants.value = " ";
 
+      } else {
+        alert("La altura de la planta es mayor a su altura maxima. ");
+        heightPlants.value = " ";
+
+      }
     break;
     case 3:
-    heightLil.push(parseInt(heightPlants.value));
-    console.log(heightLil, "lil");
-    heightPlants.value = " ";
+      if (heightPlants.value <= maxHeightPlants[2] && heightPlants.value > 0) {
+        heightLil.push(parseFloat(heightPlants.value));
+        console.log(heightLil, "lil");
+        heightPlants.value = " ";
 
+      } else {
+        alert("La altura de la planta es mayor a su altura maxima. ");
+        heightPlants.value = " ";
+
+      }
     break;
     default:
-    alert("how");
+      alert("how");
+      heightPlants.value = "How";
 
     break;
 
