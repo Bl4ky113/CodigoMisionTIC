@@ -2,16 +2,19 @@
 
 //Variables
 
-var infoPlants, totalFamPlants, famPlantNum;
+var infoPlants, totalFamPlants, famPlantNum, tableRow;
 var heightCac = [], heightPip = [], heightLil = [];
-var i = 1;
+var i = 1, days = 0;
 
-  //InnerHTML Variables
-var divHeightPlants = document.getElementById("heightDiv");
+  //HtmlObjects Variables
+var heightPlantsDiv = document.getElementById("heightDiv");
 var labelMaxHeight = document.getElementById("maxHeight");
-divHeightPlants.style.display = "none";
-
+var mainFunctionDiv = document.getElementById("functionDiv");
 var numFamPlant = document.getElementById("numFam_Pl");
+var mainFunctionTable = document.getElementById("function_Table");
+
+heightPlantsDiv.style.display = "none";
+mainFunctionDiv.style.display = "none";
 
   //Plants Inputs
 var numPlants = document.getElementById("numPl");
@@ -70,12 +73,12 @@ function uploadInfo() {
 
 }
 
-//check function (if cac+lil+pin == numplants)
+//check function (if cac+lil+pin == numplants) AND set family number
 
 function compareNumPlants(FamilyNum) {
   var totalFamPlants = infoPlants[1] + infoPlants[2] + infoPlants[3];
   if (totalFamPlants == infoPlants[0]) {
-    divHeightPlants.style.display = "block";
+    heightPlantsDiv.style.display = "block";
     if (infoPlants[1] > 0) {
       setFamily(0, 1);
       famPlantNum = 1;
@@ -100,7 +103,7 @@ function compareNumPlants(FamilyNum) {
 }
 
 
-//Change or Set plant family
+//Change or Set plant family on DOM
 
 function setFamily(fa, pl) {
   numFamPlant.innerHTML = "Familia: " + familyPlants[fa] + "; Número: " + pl + "; Altura de la planta en Metros: ";
@@ -113,42 +116,44 @@ function setFamily(fa, pl) {
 
 function submitHeight() {
   console.log(famPlantNum);
+
+    //Submit the height of the plants
   switch (famPlantNum) {
     case 1:
       if (heightPlants.value <= maxHeightPlants[0] && heightPlants.value > 0) {
         heightCac.push(parseFloat(heightPlants.value));
         console.log(heightCac, "cac");
-        heightPlants.value = " ";
 
       } else {
         alert("La altura de la planta es mayor a su altura maxima. ");
-        heightPlants.value = " ";
 
       }
+      heightPlants.value = " ";
+
     break;
     case 2:
       if (heightPlants.value <= maxHeightPlants[1] && heightPlants.value > 0) {
         heightPip.push(parseFloat(heightPlants.value));
         console.log(heightPip, "pip");
-        heightPlants.value = " ";
 
       } else {
         alert("La altura de la planta es mayor a su altura maxima. ");
-        heightPlants.value = " ";
 
       }
+      heightPlants.value = " ";
+
     break;
     case 3:
       if (heightPlants.value <= maxHeightPlants[2] && heightPlants.value > 0) {
         heightLil.push(parseFloat(heightPlants.value));
         console.log(heightLil, "lil");
-        heightPlants.value = " ";
 
       } else {
         alert("La altura de la planta es mayor a su altura maxima. ");
-        heightPlants.value = " ";
 
       }
+      heightPlants.value = " ";
+
     break;
     default:
       alert("how");
@@ -158,6 +163,7 @@ function submitHeight() {
 
   }
 
+    //Change the number of the plant and its family on the DOM
   if (i < infoPlants[famPlantNum]) {
     i++;
     setFamily((famPlantNum - 1), i);
@@ -169,9 +175,119 @@ function submitHeight() {
       setFamily((famPlantNum - 1), 1);
 
     } else {
-      alert("fin");
+      heightPlantsDiv.style.display = "none";
+      mainFunction(1);
 
     }
+
+  }
+
+}
+
+//Main Functions
+
+function mainFunction(fam) {
+  //Make table for the info
+  mainFunctionDiv.style.display = "block";
+  if (fam == 1 && infoPlants[1] > 0) {
+    for (num = 1; num <= infoPlants[1]; num++) {
+      tableRow = mainFunctionTable.insertRow(-1);
+      var tableInfo = {
+        fp: tableRow.insertCell(0),
+        np: tableRow.insertCell(1),
+        aip: tableRow.insertCell(2),
+        amp: tableRow.insertCell(3),
+        cd: tableRow.insertCell(4),
+        de: tableRow.insertCell(5),
+
+      };
+
+      tableInfo.fp.innerHTML = familyPlants[0];
+      tableInfo.np.innerHTML = num;
+      tableInfo.aip.innerHTML = heightCac[num - 1];
+      tableInfo.amp.innerHTML = maxHeightPlants[0];
+      tableInfo.cd.innerHTML = growthPercentage[0];
+      tableInfo.de.innerHTML = calculateDE(1, num);
+
+    }
+    mainFunction(2);
+
+  } else if (fam == 2 && infoPlants[2] > 0) {
+    for (num = 1; num <= infoPlants[2]; num++) {
+      tableRow = mainFunctionTable.insertRow(-1);
+      var tableInfo = {
+        fp: tableRow.insertCell(0),
+        np: tableRow.insertCell(1),
+        aip: tableRow.insertCell(2),
+        amp: tableRow.insertCell(3),
+        cd: tableRow.insertCell(4),
+        de: tableRow.insertCell(5),
+
+      };
+      tableInfo.fp.innerHTML = familyPlants[1];
+      tableInfo.np.innerHTML = num;
+      tableInfo.aip.innerHTML = heightPip[num - 1];
+      tableInfo.amp.innerHTML = maxHeightPlants[1];
+      tableInfo.cd.innerHTML = growthPercentage[1];
+      tableInfo.de.innerHTML = "a";
+
+    }
+    mainFunction(3);
+
+  } else if (fam == 3 && infoPlants[3] > 0){
+    for (num = 1; num <= infoPlants[3]; num++) {
+      tableRow = mainFunctionTable.insertRow(-1);
+      var tableInfo = {
+        fp: tableRow.insertCell(0),
+        np: tableRow.insertCell(1),
+        aip: tableRow.insertCell(2),
+        amp: tableRow.insertCell(3),
+        cd: tableRow.insertCell(4),
+        de: tableRow.insertCell(5),
+
+      };
+      tableInfo.fp.innerHTML = familyPlants[2];
+      tableInfo.np.innerHTML = num;
+      tableInfo.aip.innerHTML = heightLil[num-1];
+      tableInfo.amp.innerHTML = maxHeightPlants[2];
+      tableInfo.cd.innerHTML = growthPercentage[2];
+      tableInfo.de.innerHTML = "e";
+
+    }
+
+  } else {
+    alert("HOW");
+
+  }
+
+}
+
+//Get the waiting days or D.E (días de espera)
+
+function calculateDE(family, number) {
+  switch (family) {
+    case 1:
+        var result = heightCac;
+        return result + ";" + days;
+        while (result < maxHeightPlants[family - 1]) {
+          result += result * growthPercentage[family - 1];
+          days++;
+
+
+        }
+
+    break;
+    case 2:
+
+
+    break;
+    case 3:
+
+
+    break;
+    default:
+
+    break;
 
   }
 

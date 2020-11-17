@@ -1,1 +1,15 @@
 /*Made By Bl4ky113*/
+
+/* Table Style */
+
+table {
+  border-collapse: collapse;
+  width: 100%
+
+}
+
+tr, th, td {
+  border: 1px solid rgba(0, 0, 0, 1);
+  padding: 2px;
+
+}
