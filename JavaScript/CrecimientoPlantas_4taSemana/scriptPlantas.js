@@ -228,7 +228,7 @@ function mainFunction(fam) {
       tableInfo.aip.innerHTML = heightPip[num - 1];
       tableInfo.amp.innerHTML = maxHeightPlants[1];
       tableInfo.cd.innerHTML = growthPercentage[1];
-      tableInfo.de.innerHTML = "a";
+      tableInfo.de.innerHTML = calculateDE(1, num);
 
     }
     mainFunction(3);
@@ -250,7 +250,7 @@ function mainFunction(fam) {
       tableInfo.aip.innerHTML = heightLil[num - 1];
       tableInfo.amp.innerHTML = maxHeightPlants[2];
       tableInfo.cd.innerHTML = growthPercentage[2];
-      tableInfo.de.innerHTML = "e";
+      tableInfo.de.innerHTML = calculateDE(2, num);
 
     }
 
@@ -266,6 +266,8 @@ function mainFunction(fam) {
 function calculateDE(family, number) {
   var daysCac = [], daysPip = [], daysLil = [];
   daysCac[number - 1] = 0;
+  daysLil[number - 1] = 0;
+  daysPip[number - 1] = 0;
 
   switch (family) {
     case 0:
@@ -273,21 +275,33 @@ function calculateDE(family, number) {
         while (result[number - 1] <= maxHeightPlants[family]) {
           result[number - 1] += result[number - 1] * growthPercentage[family];
           daysCac[number - 1]++;
-          console.log(result);
+
         }
-        console.log(daysCac);
         return daysCac[number - 1];
 
     break;
-    case 2:
+    case 1:
+      var result = heightPip;
+      while (result[number - 1] <= maxHeightPlants[family]) {
+        result[number - 1] += result[number - 1] * growthPercentage[family];
+        daysPip[number - 1]++;
 
+      }
+      return daysPip[number - 1];
 
     break;
-    case 3:
+    case 2:
+      var result = heightLil;
+      while (result[number - 1] <= maxHeightPlants[family]) {
+        result[number - 1] += result[number - 1] * growthPercentage[family];
+        daysLil[number - 1]++;
 
+      }
+      return daysLil[number - 1];
 
     break;
     default:
+      return "HOW";
 
     break;
 
