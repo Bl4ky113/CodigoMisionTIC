@@ -4,7 +4,7 @@
 
 var infoPlants, totalFamPlants, famPlantNum, tableRow;
 var heightCac = [], heightPip = [], heightLil = [];
-var i = 1, days = 0;
+var i = 1;
 
   //HtmlObjects Variables
 var heightPlantsDiv = document.getElementById("heightDiv");
@@ -48,7 +48,6 @@ var growthPercentage = [
   0.03, //Liliáceas growth percentage
 
 ];
-
 
   //Plants Events (if change then upload the Info)
 numPlants.addEventListener("change", uploadInfo);
@@ -207,7 +206,7 @@ function mainFunction(fam) {
       tableInfo.aip.innerHTML = heightCac[num - 1];
       tableInfo.amp.innerHTML = maxHeightPlants[0];
       tableInfo.cd.innerHTML = growthPercentage[0];
-      tableInfo.de.innerHTML = calculateDE(1, num);
+      tableInfo.de.innerHTML = calculateDE(0, num);
 
     }
     mainFunction(2);
@@ -248,7 +247,7 @@ function mainFunction(fam) {
       };
       tableInfo.fp.innerHTML = familyPlants[2];
       tableInfo.np.innerHTML = num;
-      tableInfo.aip.innerHTML = heightLil[num-1];
+      tableInfo.aip.innerHTML = heightLil[num - 1];
       tableInfo.amp.innerHTML = maxHeightPlants[2];
       tableInfo.cd.innerHTML = growthPercentage[2];
       tableInfo.de.innerHTML = "e";
@@ -265,16 +264,19 @@ function mainFunction(fam) {
 //Get the waiting days or D.E (días de espera)
 
 function calculateDE(family, number) {
+  var daysCac = [], daysPip = [], daysLil = [];
+  daysCac[number - 1] = 0;
+
   switch (family) {
-    case 1:
+    case 0:
         var result = heightCac;
-        return result + ";" + days;
-        while (result < maxHeightPlants[family - 1]) {
-          result += result * growthPercentage[family - 1];
-          days++;
-
-
+        while (result[number - 1] <= maxHeightPlants[family]) {
+          result[number - 1] += result[number - 1] * growthPercentage[family];
+          daysCac[number - 1]++;
+          console.log(result);
         }
+        console.log(daysCac);
+        return daysCac[number - 1];
 
     break;
     case 2:
