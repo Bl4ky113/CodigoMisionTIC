@@ -13,3 +13,15 @@ tr, th, td {
   padding: 2px;
 
 }
+
+/* Hidden Div's */
+
+#heightDiv {
+  display: none;
+
+}
+
+#functionDiv {
+  display: none;
+
+}
