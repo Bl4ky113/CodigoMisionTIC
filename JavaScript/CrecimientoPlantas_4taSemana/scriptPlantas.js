@@ -217,12 +217,17 @@ function mainFunction(fam) {
         de: tableRow.insertCell(5),
 
       };
-
+      tableInfo.fp.className = "textCell";
       tableInfo.fp.innerHTML = familyPlants[fam - 1];
+      tableInfo.np.className = "numberCell";
       tableInfo.np.innerHTML = num;
+      tableInfo.aip.className = "numberCell";
       tableInfo.aip.innerHTML = heightCac[num - 1];
+      tableInfo.amp.className = "numberCell";
       tableInfo.amp.innerHTML = maxHeightPlants[fam - 1];
+      tableInfo.cd.className = "numberCell";
       tableInfo.cd.innerHTML = growthPercentage[fam - 1];
+      tableInfo.de.id = "dayCell";
       tableInfo.de.innerHTML = calculateDE(fam - 1, num);
 
     }
@@ -240,11 +245,17 @@ function mainFunction(fam) {
         de: tableRow.insertCell(5),
 
       };
+      tableInfo.fp.className = "textCell";
       tableInfo.fp.innerHTML = familyPlants[1];
+      tableInfo.np.className = "numberCell";
       tableInfo.np.innerHTML = num;
+      tableInfo.aip.className = "numberCell";
       tableInfo.aip.innerHTML = heightPip[num - 1];
+      tableInfo.amp.className = "numberCell";
       tableInfo.amp.innerHTML = maxHeightPlants[1];
+      tableInfo.cd.className = "numberCell";
       tableInfo.cd.innerHTML = growthPercentage[1];
+      tableInfo.de.id = "dayCell";
       tableInfo.de.innerHTML = calculateDE(1, num);
 
     }
@@ -262,11 +273,17 @@ function mainFunction(fam) {
         de: tableRow.insertCell(5),
 
       };
+      tableInfo.fp.className = "textCell";
       tableInfo.fp.innerHTML = familyPlants[2];
+      tableInfo.np.className = "numberCell";
       tableInfo.np.innerHTML = num;
+      tableInfo.aip.className = "numberCell";
       tableInfo.aip.innerHTML = heightLil[num - 1];
+      tableInfo.amp.className = "numberCell";
       tableInfo.amp.innerHTML = maxHeightPlants[2];
+      tableInfo.cd.className = "numberCell";
       tableInfo.cd.innerHTML = growthPercentage[2];
+      tableInfo.de.id = "dayCell";
       tableInfo.de.innerHTML = calculateDE(2, num);
 
     }

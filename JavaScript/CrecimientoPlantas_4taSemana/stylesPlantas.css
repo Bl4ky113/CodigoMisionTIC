@@ -1,16 +1,218 @@
 /*Made By Bl4ky113*/
 
+/* Background */
+
+body {
+  background-color: rgba(0, 255, 153, 1);
+  background-image: url("./Media/body_background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+
+}
+
+/* Div's and Header */
+
+div, header {
+  background-color: rgb(230, 255, 245);
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+
+}
+
+/* Header */
+
+header {
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px inset rgba(0, 152, 92, 1);
+  padding: 15px
+
+}
+
+h1.headerText {
+  background-color: rgba(0, 77, 46, 0.85);
+
+  width: 90%;
+  margin: auto;
+  border: 2px ridge rgba(0, 152, 92, 1);
+  padding: 10px;
+
+  color: rgba(255, 255, 255);
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color: rgba(223, 255, 254, 0.8);
+  font: italic bold 28px Georgia, serif;
+
+}
+
+/* NumPlants */
+
+#numPlantDiv {
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 3px outset rgba(0, 152, 92, 1);
+  padding: 10px 20px;
+
+}
+
+/* Height Div */
+
+#heightDiv {
+  width: 85%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 3px outset rgba(0, 152, 92, 1);
+  padding: 10px 20px;
+
+}
+
+/* FunctionDiv */
+
+#functionDiv {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 4px outset rgba(0, 152, 92, 1);
+  padding: 10px 25px;
+
+}
+
+/* Inputs Div's */
+
+#inputDiv {
+  background: rgba(255, 255, 255, 1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+
+  width: 80%;
+  margin: auto;
+  border: 2px solid rgba(0, 152, 92, 1);
+  border-radius: 100px;
+  padding: 20px;
+
+}
+
+/* Input style */
+
+input {
+  width: 100px;
+  margin: 10px;
+  border: 3px inset rgba(0, 152, 92, 1);
+  padding: 5px;
+
+}
+
+input[type="button"] {
+  width: 120px;
+
+}
+
+input:hover {
+  border: 3px outset rgba(0, 152, 92, 1);
+
+}
+
+input:focus {
+  outline: 1px ridge rgba(0, 152, 92, 1);
+  border: 1px solid rgb(0, 77, 46, 0.4);
+
+}
+
+/* text p's and labels */
+
+p {
+  background-color: rgba(250, 250, 250, 0.8);
+
+  width: 85%;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px dotted rgba(0, 152, 92, 1);
+  padding: 5px;
+
+  color: rgba(0, 50, 0);
+  text-align: center;
+  font: 18px Georgia;
+
+}
+
+label {
+  margin: 10px;
+
+  color: rgba(0, 50, 0);
+  font: bold 13px Georgia;
+
+}
+
+p.especialText {
+  background-color: rgba(0, 77, 46, 0.85);
+
+  width: auto;
+  margin: auto;
+  border: 2px dashed rgba(0, 40, 12, 1);
+  padding: 10px;
+
+  color: rgba(223, 255, 254, 0.8);
+  text-align: left;
+  font: italic bold 20px Georgia, serif;
+
+}
 /* Table Style */
 
 table {
+  background-color: rgba(255, 255, 255, 0.89);
+  width: 100%;
   border-collapse: collapse;
-  width: 100%
 
 }
 
 tr, th, td {
-  border: 1px solid rgba(0, 0, 0, 1);
-  padding: 2px;
+  border: 3px solid rgba(0, 40, 12, 1);
+  padding: 5px;
+
+}
+
+tr.firstRow {
+  background-color: rgba(0, 77, 46, 0.85);
+
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color: rgba(153, 255, 214, 0.8);
+
+}
+
+#dayCell {
+  background-color: rgba(0, 255, 153, 0.70);
+
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: rgba(0, 0, 0, 0.8);
+  font: italic bold 15px/20px Georgia, serif;
+
+}
+
+td.numberCell {
+  text-align: right;
+  font: italic bold 14px Georgia;
+
+}
+
+td.textCell {
+  text-align: center;
+  font: italic bold 14px Georgia;
 
 }
 
