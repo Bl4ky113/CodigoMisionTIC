@@ -1,0 +1,65 @@
+body{
+  font-family:arial, times, serif ;
+  color:rgb(0, 0, 0);
+  font-size: 1.4rem;
+  line-height: 1.4em;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem ;
+  line-height: 1.3em;
+}
+
+h2{
+    font-size: 2rem ;
+    line-height: 1.3em;
+}
+
+p{
+    margin-bottom:1.6em ;
+}
+
+.container {
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.header{
+    background:rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    padding: 2rem 0;
+}
+
+.herader a{
+color: white;
+text-decoration: none;
+}
+
+.logo-nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li{
+     display: inline-block;
+}
+
+.navigation ul li a{
+display: block;
+padding: 0.5rem 1rem;
+transition: all 0.4s linear;
+border-radius: 5px;
+}
+
+.navigation ul li a :hover{
+background:#17cd32;
+}
